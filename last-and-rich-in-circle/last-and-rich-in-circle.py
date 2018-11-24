@@ -3,9 +3,8 @@
 
 
 def find_last(n, m):
-    dictionary_circle = [[[x, 0 ], 0] for x in range(1,n+1)]
-    #print(dictionary_circle)
 
+    dictionary_circle = [[[x, 0 ], 0] for x in range(1,n+1)]
     current_index = 0
 
     while(len(dictionary_circle)>1):
@@ -27,26 +26,6 @@ def find_last(n, m):
     	del dictionary_circle[(current_index ) % n]
     return (dictionary_circle[0][0][0], dictionary_circle[0][0][1])
 
-
-
-
-    """
-    start_point = 0
-    while(start_point<m):
-    	start_point += 1
-    	dictionary_circle[start_point % n] += 1
-    	
-
-    for key, value in dictionary_circle.items():
-    	if value==0: dictionary_circle[key] = 2
-
-    print(dictionary_circle.keys())
-    
-    #while(len(dictionary_circle)>1):
-    #	dictionary_circle[(start_point+1) % n] += dictionary_circle[start_point % n]
-    #	del dictionary_circle[start_point % n]
-    print(dictionary_circle)"""
-# Test
 
 print(find_last(5, 1), (5, 24))
 print(find_last(8, 3), (7, 51))
